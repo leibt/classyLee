@@ -9,6 +9,7 @@ $donnees = $obj->infoClient($_SESSION['user']['pseudo'],$_SESSION['user']['mdp']
             
         <div class="col-sm-5 center-block bordure">
             <div class="row">
+                
                 <div class="col-sm-6"><p>Numéro de client : </p></div>
                 <div class="col-sm-6"><p><?php print $donnees[0]->id_client; ?></p></div>
             </div>
