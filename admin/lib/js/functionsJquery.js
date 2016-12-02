@@ -9,4 +9,13 @@ $(document).ready(function(){
        window.location.href=url;
    });
    
+   
+   /*$('#hm-zoom img').mouseover(function(){
+       $(this).toggle(function () {
+             $(this).width('auto');
+        });
+   });
+   */
+
+
 });

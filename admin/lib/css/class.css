@@ -8,6 +8,17 @@ and open the template in the editor.
     Author     : Leïla
 */
 
+
+
+#hm-zoom img:hover {
+-webkit-transform:scale(1.02);  /*Safari et Chrome*/
+-moz-transform:scale(1.02); /* Firefox */
+-ms-transform:scale(1.02); /* Internet Explorer 9 */
+-o-transform:scale(1.02); /* Opera */
+transform:scale(1.02);
+}
+
+
 .navbar-inverse{
     margin-bottom: 0;
 }
@@ -35,11 +46,16 @@ and open the template in the editor.
 
 .aff{
     margin-top: 5px;
-    
+    margin-bottom: 5px;
 }
 
 .detailProd{
     padding-top: 5%;
+}
+
+.contenu{
+    padding-top:0.75%;
+    padding-bottom: 2.2%;
 }
 
 @media screen and (max-width: 400px) {
@@ -92,6 +108,13 @@ and open the template in the editor.
 .sidebar-nav li a:focus {
     text-decoration: none;
 }
+
+.dropdown:hover .dropdown-menu {  /* deroulement automatique menu*/ 
+    display: block;
+    margin-top: 0; /* remove the gap so it doesn't close*/
+ }
+ 
+
 
 /*.sidebar-nav > .sidebar-brand {
     height: 65px;

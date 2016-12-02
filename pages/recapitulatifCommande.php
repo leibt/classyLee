@@ -7,7 +7,7 @@ $donnees = $obj->infoClient($_SESSION['user']['pseudo'],$_SESSION['user']['mdp']
     <div class="row">
         <div class="col-xs-12 col-sm-12 centrerTexte"><p>THANK YOU</p></div>
             
-        <div class="col-sm-5 center-block bordure">
+        <div class="col-sm-5 center-block bordureInset">
             <div class="row">
                 
                 <div class="col-sm-6"><p>Numéro de client : </p></div>

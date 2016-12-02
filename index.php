@@ -7,7 +7,7 @@ session_start();
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Lilook's</title>
+        <title>Classy Lee</title>
         <link rel="stylesheet" type="text/css" href="./admin/lib/css/bootstrap-3.3.7-dist/bootstrap/css/bootstrap.css">
         <!--<link rel="stylesheet" type="text/css" href="./admin/lib/css/body.css">
         <link rel="stylesheet" type="text/css" href="./admin/lib/css/accueil.css">
@@ -20,6 +20,7 @@ session_start();
         
         <script type="text/javascript" src="./admin/lib/js/jquery-3.1.1.js"></script>
         <script type="text/javascript" src="./admin/lib/css/bootstrap-3.3.7-dist/bootstrap/js/bootstrap.js"></script>
+        <script type="text/javascript" src="./admin/lib/js/functionsJquery.js"></script>
 
     </head>
     <body>
@@ -28,8 +29,8 @@ session_start();
                 <div class="row">
                     <!--<div class="header-right col-sm-4 col-md-4"></div> -->
                     <div  class="header-logo col-sm-offset-4  col-sm-4 col-xs-4 clearfix">
-                        <a href="index.php?page=accueil.php" title="Lilook's">
-                            <img class="img-responsive" src="./admin/images/logo1.jpg" alt="Lilook's">
+                        <a href="index.php?page=accueil.php" title="Classy Lee">
+                            <img class="img-responsive" src="./admin/images/classylee.jpg" alt="Classy Lee">
                         </a>
                     </div>                   
 
@@ -71,7 +72,7 @@ session_start();
             </div>
         </header>
 
-        <div class="container-fluid">
+        <div class=" container-fluid">
             <?php
                         
             if (isset($_GET['page'])) {
@@ -102,8 +103,8 @@ session_start();
             ?> 
         </div>
 
-        <footer class = "container-fluid backgroundBlack">
-
+        <footer class = "panel-footer backgroundBlack">
+            <div class="container-fluid">
             <div class = "row">
                 <?php
                 if (file_exists('./lib/php/footer.php')) {
@@ -111,7 +112,7 @@ session_start();
                 }
                 ?>
             </div>
-
+            </div>
         </footer>
     </body>
 </html>
