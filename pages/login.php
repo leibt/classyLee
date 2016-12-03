@@ -1,29 +1,43 @@
-<?php
-?>
-<div class="container">
-    
-    <form action="index.php?page=traitement_user.php" method="POST">
-        <div class="row">
-            <div class="col-sm-12 centrerTexte">CONNECTEZ-VOUS</div>       
+<div class="container contenu" >
+    <div class="row">
+        <div class="col-sm-6 col-md-4 col-md-offset-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <p class="centrerTexte gras espaceTexte">CONNECTEZ-VOUS</p>
+                </div>
+                <div class="panel-body">
+                    <form role="form" action="index.php?page=traitement_user.php" method="POST">
+                        <fieldset>
+                            <div class="row">
+                                <div class="col-sm-12 col-md-10  col-md-offset-1 ">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="glyphicon glyphicon-user"></i>
+                                            </span> 
+                                            <input class="form-control" placeholder="Votre pseudo" name="pseudo" type="text" autofocus>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="glyphicon glyphicon-lock"></i>
+                                            </span>
+                                            <input class="form-control" placeholder="Mot de passe" name="mdp" type="password" >
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="submit" name="envoieLog" class="btn btn-lg btn-primary btn-block backgroundGrey" value="Se connecter">
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <div class="panel-footer ">
+                    <p class="centrerTexte"> Vous n'avez pas de compte ? <a href="index.php?page=inscription.php" > Inscrivez-vous </a></p>
+                </div>
+            </div>
         </div>
-
-        <div class="row">
-            <div class="col-sm-offset-5 col-sm-1">Pseudo</div>
-            <div class="col-sm-6"><input type="text" name="pseudo" /></div>
-        </div>
-
-        <div class="row">
-            <div class="col-sm-offset-4 col-sm-2">Mot de passe</div>
-            <div class="col-sm-6"><input type="password" name="mdp" /></div>
-        </div>
-
-        <div class="row">
-            <div class="col-sm-offset-4 col-sm-8"><a href="index.php?page=inscription.php">Vous n'êtes pas encore inscrit ? Inscrivez-vous !</a></div>
-        </div>
-
-        <div class="row">
-            <div class="col-sm-offset-7 col-sm-5"><input type="submit" name="envoieLog" value="Connexion"/></div>
-        </div>
-    </form>
+    </div>
 </div>
-

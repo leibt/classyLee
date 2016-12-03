@@ -1,52 +1,68 @@
-<div class="container">
-    
-    <form action="index.php?page=traitement_user.php" method="POST">
-        <div class="row">
-            <div class="col-sm-12 centrerTexte">INSCRIVEZ-VOUS</div>       
-        </div>
+<div class="container contenu">
+    <div class="row">
+        <div class="col-sm-offset-6 col-md-4 col-md-offset-4">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <form method="POST" action="#" role="form">
+                        <div class="form-group">
+                            <h3 class="centrerTexte">Créer un compte</h3>
+                        </div>
+                        <div class="form-group">
+                            <p class="control-label " for="nom">Nom
+                                <input id="nom" name="nom" type="text" maxlength="20" class="form-control">
+                            </p>
+                        </div>
+                        <div class="form-group">
+                            <p class="control-label" for="prenom">Prénom
+                                <input id="prenom" name="prenom" type="text" maxlength="50" class="form-control">
+                            </p>
+                        </div>
 
-        <div class="row">
-            <div class="col-sm-offset-5 col-sm-1">Nom</div>
-            <div class="col-sm-6"><input type="text" name="nom" /></div>
-        </div>
-        
-        <div class="row">
-            <div class="col-sm-offset-5 col-sm-1">Prénom</div>
-            <div class="col-sm-6"><input type="text" name="prenom" /></div>
-        </div>
-        
-        <div class="row">
-            <div class="col-sm-offset-5 col-sm-1">Adresse</div>
-            <div class="col-sm-6"><input type="text" name="adr" /></div>
-        </div>
-        
-        <div class="row">
-            <div class="col-sm-offset-5 col-sm-1">Numéro</div>
-            <div class="col-sm-6"><input type="text" name="numAdr" maxlength="4"/></div>
-        </div>
-        
-        <div class="row">
-            <div class="col-sm-offset-4 col-sm-2">Code postal</div>
-            <div class="col-sm-6"><input type="text" name="cp" maxlength="4" pattern="[0-9]{4}" placeholder="6000"/></div>
-        </div>
-        
-        <div class="row">
-            <div class="col-sm-offset-5 col-sm-1">Téléphone</div>
-            <div class="col-sm-6"><input type="text" name="tel" maxlength="10" pattern="[0-9]{10}" placeholder="ex : 0123456789"/></div>
-        </div>
-        
-        <div class="row">
-            <div class="col-sm-offset-5 col-sm-1">Pseudo</div>
-            <div class="col-sm-6"><input type="text" name="pseudo" /></div>
-        </div>
+                        <div class="form-group">
+                            <p class="control-label" for="adr">Adresse
+                                <input id="adr" name="adr" type="text" maxlength="50" class="form-control">
+                            </p>
+                        </div>
 
-        <div class="row">
-            <div class="col-sm-offset-4 col-sm-2">Mot de passe</div>
-            <div class="col-sm-6"><input type="password" name="mdp" minlength="5"/></div>
-        </div>
+                        <div class="row">
+                            <div class="col-sm-6 form-group">
+                                <p>Numéro</p>
+                                <input id="numAdr" name="numAdr" type="number" class="form-control">
+                            </div>	
+                            <div class="col-sm-6 form-group">
+                                <p>Code postal</p>
+                                <input type="number" id="cp" name="cp" class="form-control">
+                            </div>	
+                        </div>
 
-        <div class="row">
-            <div class="col-sm-offset-7 col-sm-5"><input type="submit" name="insc" value="insc"/></div>
+                        <div class="form-group">
+                            <p class="control-label" for="tel">Téléphone
+                                <input id="tel" name="tel" type="text" maxlength="10" minlength="10" pattern="[0-9]{10}" placeholder="ex : 0123456789" class="form-control">
+                            </p>
+                        </div>
+                        
+                        <div class="form-group">
+                            <p class="control-label" for="pseudo">Pseudo
+                                <input id="pseudo" name="pseudo" type="text" maxlength="20"minlength="4" pattern="[0-9]{10}" placeholder="ex : 0123456789" class="form-control">
+                            </p>
+                        </div>
+                        
+                        <div class="form-group">
+                            <p class="control-label" for="mdp">Mot de passe 
+                                <input id="mdp" name="mdp" type="text" minlength="5" sclass="form-control">
+                            </p>
+                        </div>
+                        
+                        
+                        <div class="form-group">
+                            <button id="insc" type="submit" class="btn  btn-block">S'incrire</button>
+                        </div>
+                        <p class="form-group">En créeant votre compte vous acceptez notre politique !</p>
+                        <hr>
+                        <p></p>Vous avez déja un compte ? <a href="index.php?page=login.php">Cliquez-ici</a></p>
+                    </form>
+                </div>
+            </div>
         </div>
-    </form>
+    </div>
 </div>

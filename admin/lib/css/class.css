@@ -58,7 +58,12 @@ transform:scale(1.02);
     padding-bottom: 2.2%;
 }
 
-@media screen and (max-width: 400px) {
+#rect{
+   border-bottom: 1px solid gray; 
+   padding-bottom: 2%;
+}
+
+@media screen and (max-width: 500px) {
   .header-logo{
       padding-top: 5%;
   }  
@@ -70,6 +75,11 @@ transform:scale(1.02);
   }
   footer ul li a{
       font-size: 1.65vh;
+  }
+  
+  
+  .texteARap{
+      font-size: 1.5vh;
   }
 }
 

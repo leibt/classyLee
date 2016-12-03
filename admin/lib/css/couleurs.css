@@ -13,6 +13,9 @@ and open the template in the editor.
 .backgroundBlack{
     background-color: black;
 }
+.backgroundGrey{
+    background-color: grey;
+}
 .black{
     color:black;
 }
@@ -21,6 +24,10 @@ and open the template in the editor.
 }
 .secondGrey{
    color: #757D75;
+}
+
+.police{
+    font-family: "Century Gothic";
 }
 
 .textRap{
@@ -64,3 +71,10 @@ and open the template in the editor.
     color:white;
     background-color: black;
 }
+
+.btnTotal{
+    background-color: black;
+    padding: 4% 20% 4% 5px;
+    color: white;
+}
+
