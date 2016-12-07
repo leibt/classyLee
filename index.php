@@ -17,10 +17,13 @@ session_start();
         <link rel="stylesheet" type="text/css" href="./admin/lib/css/balise.css">
         <link rel="stylesheet" type="text/css" href="./admin/lib/css/class.css">
 
-        
+
         <script type="text/javascript" src="./admin/lib/js/jquery-3.1.1.js"></script>
+        <script type="text/javascript" src="./admin/lib/js/jquery-validation-1.15.0/"></script>
+        <script type="text/javascript" src="./admin/lib/js/messageJqueryVal.js"></script>
         <script type="text/javascript" src="./admin/lib/css/bootstrap-3.3.7-dist/bootstrap/js/bootstrap.js"></script>
         <script type="text/javascript" src="./admin/lib/js/functionsJquery.js"></script>
+        <script src="admin/lib/js/functionsJqueryVal.js" type="text/javascript"></script>
 
     </head>
     <body>
@@ -34,25 +37,39 @@ session_start();
                         </a>
                     </div>                   
 
-                    <div class="panier col-sm-4 col-xs-4 ">                        
-                        <div class="col-sm-6">
-                            <a href="index.php?page=panier.php">
+                    <div class="blockGly col-sm-4 col-xs-4 ">                        
+                        <div class="panier col-sm-6 ">                                     
+
+                            <span class="inv" id="nbArt">
+                                <?php
+                                if (isset($_SESSION['panier']['ref'])) {
+                                    if (!empty($_SESSION["panier"]["qteTotal"])) {
+                                        print $_SESSION["panier"]["qteTotal"];
+                                    }
+                                   
+                                } else {
+                                    print '';
+                                }
+                                ?>
+                            </span><br/>
+                            <a class="test" href="index.php?page=panier.php"> 
                                 <span class="glyphicon glyphicon-shopping-cart black"></span><br>
                                 <span class="textPanier black">Votre panier</span>
                             </a>
+                            <div id="resumer" class=" cache">
+                                Bien ajouté !
+                            </div>    
                         </div> 
 
-                        <div class="col-sm-6 ">
+                        <div class="user col-sm-6">
                             <a href="index.php?page=login.php">
-                                <span class="glyphicon glyphicon-user black"></span><br>
-                               
+                                <span class="glyphicon glyphicon-user black centre"></span><br>
+
                                 <span class="textPanier black">
-                                    <?php 
-                                    if(isset($_SESSION['user'])){ ?>
-                                    <a href="index.php?page=disconnect.php"><?php print 'Se déconnecter '.$_SESSION['user']['pseudo']; ?></a>
-                                    <?php        
-                                    }
-                                    else {
+                                    <?php if (isset($_SESSION['user'])) { ?>
+                                        <a href="index.php?page=disconnect.php"><?php print 'Se déconnecter ' . $_SESSION['user']['pseudo']; ?></a>
+                                        <?php
+                                    } else {
                                         print "Connexion";
                                     }
                                     ?>
@@ -63,56 +80,53 @@ session_start();
                 </div>
 
                 <div class="row">
-                    <?php
-                    if (file_exists('./lib/php/menu.php')) {
-                        include ('./lib/php/menu.php');
-                    }
-                    ?>
+<?php
+if (file_exists('./lib/php/menu.php')) {
+    include ('./lib/php/menu.php');
+}
+?>
                 </div>
             </div>
         </header>
 
-        <div class=" container-fluid">
-            <?php
-                        
-            if (isset($_GET['page'])) {
-                if (file_exists("./pages/" . $_GET['page'])) /* prend la valeur du paramètre page transmise par l'URL */ {
-                    include("./pages/" . $_GET['page']);
-                }
-            } else {
-                include("./pages/accueil.php"); /* si aucune touche est entrée la page sera celle de l'accueil */
-            }
+        <div class="main container-fluid">
+<?php
+if (isset($_GET['page'])) {
+    if (file_exists("./pages/" . $_GET['page'])) /* prend la valeur du paramètre page transmise par l'URL */ {
+        include("./pages/" . $_GET['page']);
+    }
+} else {
+    include("./pages/accueil.php"); /* si aucune touche est entrée la page sera celle de l'accueil */
+}
 
-            /*
-              print $_SESSION['page'];
-              if (!isset($_SESSION['page'])) {
-              $_SESSION['page'] = "accueil";
-              }
-              if (isset($_GET['page'])) {
-              $_SESSION['page'] = $_GET['page'];
+/*
+  print $_SESSION['page'];
+  if (!isset($_SESSION['page'])) {
+  $_SESSION['page'] = "accueil";
+  }
+  if (isset($_GET['page'])) {
+  $_SESSION['page'] = $_GET['page'];
 
-              }
-              $path = './pages/' . $_SESSION['page'] . '.php';
-              if (file_exists($path)) {
-              include($path);
-              } else {
-              print "Page introuvable";
+  }
+  $path = './pages/' . $_SESSION['page'] . '.php';
+  if (file_exists($path)) {
+  include($path);
+  } else {
+  print "Page introuvable";
 
-              }
-             */
-            ?> 
+  }
+ */
+?> 
         </div>
 
-        <footer class = "panel-footer backgroundBlack">
-            <div class="container-fluid">
-            <div class = "row">
-                <?php
-                if (file_exists('./lib/php/footer.php')) {
-                    include ('./lib/php/footer.php');
-                }
-                ?>
-            </div>
-            </div>
+        <footer class="footer backgroundBlack">
+
+<?php
+if (file_exists('./lib/php/footer.php')) {
+    include ('./lib/php/footer.php');
+}
+?>
+
         </footer>
     </body>
 </html>

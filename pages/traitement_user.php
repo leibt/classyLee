@@ -1,5 +1,7 @@
 <?php
 
+header("location:" . $_SERVER['HTTP_REFERER']);
+
 //include("./admin/lib/php/function_user.php");
 
 $obj = new ClientDB($cnx);
@@ -17,11 +19,11 @@ if (isset($_POST['insc'])) {
         $mdp = htmlentities(md5($_POST['mdp']));
 
         $adresse = $numAdr . ',' . $adr;
-        print 'le pseudo est '.$pseudo;
+        print 'le pseudo est ' . $pseudo;
         $v = $obj->verifPseudo($pseudo);
-        
+
         print ($v);
-                
+
         if ($v == 0) {
             if (!isset($_SESSION['user'])) {
                 $retour = $obj->createUser($nom, $prenom, $adresse, $cp, $tel, $pseudo, $mdp);
@@ -32,8 +34,8 @@ if (isset($_POST['insc'])) {
                     $_SESSION["user"]["pseudo"] = $pseudo;
                     $_SESSION["user"]["mdp"] = $mdp;
 
-                    /*array_push($_SESSION["user"]["pseudo"], $pseudo);
-                    array_push($_SESSION["user"]["mdp"], $mdp);*/
+                    /* array_push($_SESSION["user"]["pseudo"], $pseudo);
+                      array_push($_SESSION["user"]["mdp"], $mdp); */
                 }
             }
         } else {
@@ -43,7 +45,7 @@ if (isset($_POST['insc'])) {
 }
 
 if (isset($_POST['envoieLog'])) {
-    
+
     if (!isset($_SESSION['user'])) {
         if (!empty($_POST['pseudo']) && !empty($_POST['mdp'])) {
             $pseudo = htmlentities(strtolower($_POST['pseudo'])); // de manière à identifier plus facilement (SANS PB DE CASE)
@@ -60,7 +62,7 @@ if (isset($_POST['envoieLog'])) {
                     $_SESSION["admin"] = array();
                     $_SESSION["admin"]["pseudo"] = $pseudo;
                     $_SESSION["admin"]["mdp"] = $mdp;
-                    
+
                     header('Location: http://localhost/projetWeb3/lilooks/admin/index.php?page=accueil.php');
                     break;
                 case 2:

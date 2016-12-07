@@ -4,7 +4,7 @@ if (isset($_GET['ref'])) {
     $donnees = $obj->getProductById($_GET['ref']);
     ?>
 
-    <div class="container contenu">
+    <div class="container contenu ">
         <div class="row">
             <form method="POST" action="index.php?page=traitement_panier.php"> 
                 <div class="col-sm-offset-2 col-sm-5 col-xs-12">
@@ -49,13 +49,13 @@ if (isset($_GET['ref'])) {
 
                         <div class="col-sm-12">
                             <p for="qte">Quantité
-                            <select name="qte" class="qte">
-                                <option value=1>1</option>
-                                <option value=2>2</option>
-                                <option value=3>3</option>
-                                <option value=4>4</option>
-                                <option value=5>5</option>
-                            </select>
+                                <select name="qte" class="qte">
+                                    <option value=1>1</option>
+                                    <option value=2>2</option>
+                                    <option value=3>3</option>
+                                    <option value=4>4</option>
+                                    <option value=5>5</option>
+                                </select>
                             </p>
                         </div>
 
@@ -63,7 +63,7 @@ if (isset($_GET['ref'])) {
 
                     <div class="row">
                         <div class="col-sm-11">
-                            <input class="btnSubmit" type="submit" name="achete" value="Ajouter au panier"/>
+                            <input class="btnSubmit" type="submit" id="achete" name="achete" value="Ajouter au panier"/>
                         </div>
                     </div>
                 </div>
@@ -72,7 +72,9 @@ if (isset($_GET['ref'])) {
                 <input type="hidden" name="libelle" value="<?php echo $donnees[0]->libelle; ?>"/>
                 <input type="hidden" name="image" value="<?php echo $donnees[0]->image; ?>"/>
                 <input type="hidden" name="prix" value="<?php echo $donnees[0]->prix; ?>"/>
+
             </form>
+
         </div>
     </div>
 
@@ -80,4 +82,6 @@ if (isset($_GET['ref'])) {
 } else {
     print "Page introuvable";
 }
+
+
 

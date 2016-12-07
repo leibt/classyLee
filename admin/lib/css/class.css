@@ -7,8 +7,12 @@ and open the template in the editor.
     Created on : 22-nov.-2016, 12:08:55
     Author     : Leïla
 */
-
-
+html,body{
+    height: 100%;
+}
+footer{
+    height: 100%;
+}
 
 #hm-zoom img:hover {
 -webkit-transform:scale(1.02);  /*Safari et Chrome*/
@@ -17,7 +21,40 @@ and open the template in the editor.
 -o-transform:scale(1.02); /* Opera */
 transform:scale(1.02);
 }
+.inv{
+    visibility: hidden;
+}
+.vis{
+    visibility:visible;
+}
 
+
+.cache{
+    display: none;
+}
+.voir{
+    display: block;
+}
+
+@-webkit-keyframes blinker {  
+  from { opacity: 1.0; }
+  to { opacity: 0.0; }
+}
+.clignoter {
+  -webkit-animation-name: blinker;  
+  -webkit-animation-iteration-count: infinite;  
+  -webkit-animation-timing-function: cubic-bezier(1.0,0,0,1.0);
+  -webkit-animation-duration: 1s; 
+}
+
+
+/*.miniResum{
+    visibility: hidden;
+}
+
+.miniResumShow{
+    position: absolute;
+}*/
 
 .navbar-inverse{
     margin-bottom: 0;
@@ -33,11 +70,21 @@ transform:scale(1.02);
 .navbar-nav > li > a {
   letter-spacing:3px;
 }
+.blockGly{
+    float: right;
+}
 
 .panier{
-    float: right;
+    /*float: right;*/
     text-align: center;
     padding-top: 3%; 
+}
+
+.user{
+    margin-top: 7.5%; 
+}
+.centre{
+    padding-left: 15%;
 }
 
 .img-slider{
@@ -63,13 +110,18 @@ transform:scale(1.02);
    padding-bottom: 2%;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 768px) {
   .header-logo{
       padding-top: 5%;
   }  
-  .panier span {
+  .blockGly span{
       font-size: 0.75em;
   }
+  .user{
+      padding-left: 35%;
+  }
+  
+
   h4{
       font-size: 2vh;
   }
