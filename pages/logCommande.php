@@ -1,4 +1,4 @@
-<div class="container contenu">
+<div class="container contenu" >
     <div class="row">
         <div class="col-sm-offset-6 col-md-4 col-md-offset-4">
             <div class="panel panel-default">
@@ -40,25 +40,24 @@
                                 <input id="tel" name="tel" type="text" maxlength="9" minlength="8" pattern="(0)[0-9]{1,2}\/[0-9]{2}\.[0-9]{2}\.[0-9]{2}" placeholder="ex : 01/23.45.78" class="form-control">
                             </p>
                         </div>
-                        
+
                         <div class="form-group">
                             <p class="control-label" for="pseudo">Pseudo
                                 <input id="pseudo" name="pseudo" type="text" maxlength="20" minlength="4"  class="form-control">
                             </p>
                         </div>
-                        
+
                         <div class="form-group">
                             <p class="control-label" for="mdp">Mot de passe 
                                 <input id="mdp" name="mdp" type="text" minlength="5" class="form-control">
                             </p>
                         </div>
-                        
-                        
+
+
                         <div class="form-group">
                             <button id="insc" type="submit" class="btn  btn-block">S'incrire</button>
                         </div>
-                        <p class="form-group">En créeant votre compte vous acceptez notre politique !</p>
-                        <p>Vous avez déja un compte ? <a href="index.php?page=login.php">Cliquez-ici</a></p>
+                        <p class="form-group">En créant votre compte vous acceptez notre politique !</p>
                     </form>
                 </div>
             </div>

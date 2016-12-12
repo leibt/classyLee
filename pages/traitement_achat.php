@@ -1,9 +1,23 @@
-<?php
+<?php 
 $obj = new CommandeDB($cnx);
+$objProd = new ProduitsDB($cnx);
 
 if(isset($_POST['payer']) && isset($_POST['total'])){
     echo 'ok';
    if(isset($_SESSION['user'])){
+       
+       
+       
+       $result = count($_SESSION["panier"]['ref']);
+       
+       for ($i = 0; $i < $result; $i++) {
+           $ref=$_SESSION["panier"]["ref"][$i];
+           $taille=$_SESSION["panier"]["taille"][$i];
+           $qte=$_SESSION["panier"]["qte"][$i];
+           
+           $v=$objProd->updateQte($ref, $taille, $qte);
+       }
+       
        $pseudo=$_SESSION['user']['pseudo'];
        $mdp=$_SESSION['user']['mdp'];
        if(!empty($pseudo) && !empty($mdp)){
@@ -25,7 +39,7 @@ if(isset($_POST['payer']) && isset($_POST['total'])){
                    $retour=$obj->ajoutDetailCommande($id_commande,$ref,$taille,$qte);
                    
                    if($retour == 1){
-                       header('Location: http://localhost/projetWeb3/lilooks/index.php?page=recapitulatifCommande.php');
+                       header('Location: http://localhost/projet/classyLee/index.php?page=recapitulatifCommande.php');
                    }
                    //print '<br>Retour insert detail commande : '.$retour;
                }
@@ -39,7 +53,7 @@ if(isset($_POST['payer']) && isset($_POST['total'])){
        
    } 
    else{
-       header('Location: http://localhost/projetWeb3/lilooks/index.php?page=login.php');
+       header('Location: http://localhost/projet/classyLee/index.php?page=login.php');
    }
 }
 

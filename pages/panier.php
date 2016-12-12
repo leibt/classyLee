@@ -1,11 +1,5 @@
-
 <div class="container contenu">
-
-    <?php
-    if (isset($_SESSION["panier"])) {
-        $result = count($_SESSION["panier"]['ref']);
-        ?>
-        <div id='rect'>
+    <div id='rect'>
             <div class="table-responsive">
                 <table class="table">
                     <thead>
@@ -16,6 +10,11 @@
                             <th>Suppression</th>
                         </tr>
                     </thead>
+    <?php
+    if (isset($_SESSION["panier"])) {
+        $result = count($_SESSION["panier"]['ref']);
+        ?>
+        
                     <?php for ($i = 0; $i < $result; $i++) { ?>
                         <tbody>
                             <tr>
@@ -37,12 +36,13 @@
                     <?php }
                     ?>
 
-                </table>
+                
+    <?php } ?>
+                        </table>
             </div>
         </div>
-    <?php } ?>
     <div class="row">
-        <form action="<?php print $_SERVER['PHP_SELF']; ?>" method="POST">           
+        <form action="index.php?page=traitement_achat.php" method="POST">           
             <div class="col-sm-offset-9 col-sm-2 ">
                 <div class="col-sm-9 gras ">TOTAL : </div>
 

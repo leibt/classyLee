@@ -7,12 +7,19 @@ and open the template in the editor.
     Created on : 22-nov.-2016, 12:08:55
     Author     : Leïla
 */
-html,body{
-    height: 100%;
+html, body {
+  height: 100%;
 }
-footer{
-    height: 100%;
+.main{
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -230px; 
 }
+
+footer, .main:after{
+  height: 230px;
+}
+
 
 #hm-zoom img:hover {
 -webkit-transform:scale(1.02);  /*Safari et Chrome*/
@@ -105,11 +112,16 @@ transform:scale(1.02);
     padding-bottom: 2.2%;
 }
 
+
 #rect{
    border-bottom: 1px solid gray; 
    padding-bottom: 2%;
 }
 
+.rectangle{
+    border : 5px inset darkslategray;
+    margin :3% 20% 2% 20%;
+}
 @media screen and (max-width: 768px) {
   .header-logo{
       padding-top: 5%;
@@ -121,7 +133,6 @@ transform:scale(1.02);
       padding-left: 35%;
   }
   
-
   h4{
       font-size: 2vh;
   }
@@ -129,9 +140,13 @@ transform:scale(1.02);
       font-size: 1.65vh;
   }
   
-  
   .texteARap{
       font-size: 1.5vh;
+  }
+  
+  .rectangle{
+    border : 5px inset darkslategray;
+    margin :3% 0 2% 0;
   }
 }
 

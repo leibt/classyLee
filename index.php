@@ -46,7 +46,6 @@ session_start();
                                     if (!empty($_SESSION["panier"]["qteTotal"])) {
                                         print $_SESSION["panier"]["qteTotal"];
                                     }
-                                   
                                 } else {
                                     print '';
                                 }
@@ -80,52 +79,52 @@ session_start();
                 </div>
 
                 <div class="row">
-<?php
-if (file_exists('./lib/php/menu.php')) {
-    include ('./lib/php/menu.php');
-}
-?>
+                    <?php
+                    if (file_exists('./lib/php/menu.php')) {
+                        include ('./lib/php/menu.php');
+                    }
+                    ?>
                 </div>
             </div>
         </header>
 
         <div class="main container-fluid">
-<?php
-if (isset($_GET['page'])) {
-    if (file_exists("./pages/" . $_GET['page'])) /* prend la valeur du paramètre page transmise par l'URL */ {
-        include("./pages/" . $_GET['page']);
-    }
-} else {
-    include("./pages/accueil.php"); /* si aucune touche est entrée la page sera celle de l'accueil */
-}
+            <?php
+            if (isset($_GET['page'])) {
+                if (file_exists("./pages/" . $_GET['page'])) /* prend la valeur du paramètre page transmise par l'URL */ {
+                    include("./pages/" . $_GET['page']);
+                }
+            } else {
+                include("./pages/accueil.php"); /* si aucune touche est entrée la page sera celle de l'accueil */
+            }
 
-/*
-  print $_SESSION['page'];
-  if (!isset($_SESSION['page'])) {
-  $_SESSION['page'] = "accueil";
-  }
-  if (isset($_GET['page'])) {
-  $_SESSION['page'] = $_GET['page'];
+            /*
+              print $_SESSION['page'];
+              if (!isset($_SESSION['page'])) {
+              $_SESSION['page'] = "accueil";
+              }
+              if (isset($_GET['page'])) {
+              $_SESSION['page'] = $_GET['page'];
 
-  }
-  $path = './pages/' . $_SESSION['page'] . '.php';
-  if (file_exists($path)) {
-  include($path);
-  } else {
-  print "Page introuvable";
+              }
+              $path = './pages/' . $_SESSION['page'] . '.php';
+              if (file_exists($path)) {
+              include($path);
+              } else {
+              print "Page introuvable";
 
-  }
- */
-?> 
+              }
+             */
+            ?> 
         </div>
 
         <footer class="footer backgroundBlack">
 
-<?php
-if (file_exists('./lib/php/footer.php')) {
-    include ('./lib/php/footer.php');
-}
-?>
+            <?php
+            if (file_exists('./lib/php/footer.php')) {
+                include ('./lib/php/footer.php');
+            }
+            ?>
 
         </footer>
     </body>

@@ -30,9 +30,17 @@ if(isset($_POST['achete']) && !isset($_GET['sup']) && !isset($_GET['taille'])){
     $qteProdBD=$obj->verifQte($ref,$taille);//($_POST['ref'],$_POST['taille']);
     
     
-    if ($_POST['qte'] <= $qteProdBD) {
+    if ($_POST['qte'] <= $qteProdBD) {       
+        if(!isset($_SESSION['panier'])){
+            creationPanier();
+        }
+        else{
+            $test=ajout();
+        }
         
-        $v=$obj->updateQte($ref, $taille, $_POST['qte']);
+        //$v=$obj->updateQte($ref, $taille, $_POST['qte']);
+        
+        
         
         $verif= TRUE;
     } else {
@@ -40,7 +48,7 @@ if(isset($_POST['achete']) && !isset($_GET['sup']) && !isset($_GET['taille'])){
     }
     
     
-    if($verif){
+   /* if($verif){
         if(!isset($_SESSION['panier'])){
             creationPanier();
             echo 'panier créé';
@@ -54,7 +62,7 @@ if(isset($_POST['achete']) && !isset($_GET['sup']) && !isset($_GET['taille'])){
     }
     else{
         echo 'Stock Insufisant';
-    }
+    }*/
     
 }
 

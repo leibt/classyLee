@@ -7,7 +7,7 @@ session_start();
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Lilook's</title>
+        <title>Classy Lee</title>
         <link rel="stylesheet" type="text/css" href="./lib/css/bootstrap-3.3.7-dist/bootstrap/css/bootstrap.css">
 
         <link rel="stylesheet" type="text/css" href="./lib/css/couleurs.css">
@@ -25,7 +25,7 @@ session_start();
                 <div class="row">
                     <div  class="header-logo col-sm-offset-4  col-sm-4 col-xs-4 clearfix">
                         <a href="index.php?page=accueil.php" title="Lilook's">
-                            <img class="img-responsive" src="./images/logo1.jpg" alt="Lilook's">
+                            <img class="img-responsive" src="./images/classylee.jpg" alt="Lilook's">
                         </a>
                     </div>                   
 
