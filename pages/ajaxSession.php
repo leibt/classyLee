@@ -1,46 +1,16 @@
-<?php 
+<?php
 
-$obj = new ProduitsDB($cnx);
+//header('Content-Type: application/json');
 
-if (isset($_GET['sup']) && isset($_GET['taille'])) {
-    $ref = $_GET['sup'];
-    $taille = $_GET['taille'];
-
-    $qteAnc = $_SESSION["panier"]["qteTotal"];
-
-    print '<br/> la var sess qteA : ' . $qteAnc;
-    $d = $obj->suppression_art($ref, $taille);
-    print '<br>la quantite a sup est : ' . $d;
-
-    $_SESSION['panier']['qteTotal'] = $qteAnc - $d;
-    print '<br> sess = ' . $_SESSION['panier']['qteTotal'];
-    
-    header("location:".$_SERVER['HTTP_REFERER']);  /* HTTP_REFERER permet de revenir à la page précédente automatiquement */
-}
-
-if (isset($_POST['achete']) && !isset($_GET['sup']) && !isset($_GET['taille'])) {   
-    $ref = $_POST['ref'];
-    $taille = $_POST['taille'];
-
-    $qteProdBD=$obj->verifQte($ref,$taille);//($_POST['ref'],$_POST['taille']);
-    //echo $qteProdBD[0]->quantite;
-    if ($_POST['qte'] <= $qteProdBD[0]->quantite) {       
-        if(!isset($_SESSION['panier'])){
-            creationPanier();
-            print '<h3 class="gray espaceTexte centrerTexte">Article bien ajouté !</h3>';
-            
-        }
-        else{
-            $test=ajout();
-            print '<h3 class="gray espaceTexte centrerTexte">Article bien ajouté !</h3>';
-        }
-        
-        $verif= TRUE;
+//try {
+    if (!isset($_SESSION['panier'])) {
+        creationPanier();
     } else {
-        print '<h3 class="gray espaceTexte centrerTexte">Stock insufisant !</h3>';
-        $verif= FALSE;
-    }   
-}
+        $test = ajout();
+    }
+/*} catch (PDOException $e) {
+    
+}*/
 
 function creationPanier() { /* Cette fonction crée le panier */
     $_SESSION["panier"] = array();
@@ -89,3 +59,26 @@ function ajout() { /* Cette fonction permet d'ajouter la quantité d'article dé
         }
     }
 }
+
+
+
+
+
+/*if (!isset($_SESSION['panier'])) {
+    $rep = 'ok';
+    
+    echo $rep; 
+} else {
+     $rep = 'pasok';
+    echo $rep;
+}
+
+
+/*
+if (!isset($_SESSION['panier'])) {
+    creationPanier();
+} else {
+    $test = ajout();
+}*/
+
+

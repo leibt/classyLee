@@ -62,8 +62,10 @@ if (isset($_POST['envoieLog'])) {
                     $_SESSION["admin"] = array();
                     $_SESSION["admin"]["pseudo"] = $pseudo;
                     $_SESSION["admin"]["mdp"] = $mdp;
-
-                    header('Location: http://localhost/projet/classyLee/admin/index.php?page=accueil.php');
+                    
+                    
+                    header('Location: admin/index.php?page=accueil.php');
+                    ///header('Location: http://localhost/projet/classyLee/admin/index.php?page=accueil.php');
                     break;
                 case 2:
                     echo "Client";
@@ -71,7 +73,7 @@ if (isset($_POST['envoieLog'])) {
                     $_SESSION["user"]["pseudo"] = $pseudo;
                     $_SESSION["user"]["mdp"] = $mdp;
 
-                    header('Location: http://localhost/projet/classyLee/index.php?page=accueil.php');
+                    header('Location: index.php?page=accueil.php');
                     break;
             }
         }

@@ -3,6 +3,7 @@
 include('./admin/lib/php/adm_liste_include.php');
 $cnx = Connexion::getInstance($dsn, $user, $pass);
 session_start();
+ob_start();
 ?>
 <html>
     <head>
@@ -24,6 +25,7 @@ session_start();
         <script type="text/javascript" src="./admin/lib/css/bootstrap-3.3.7-dist/bootstrap/js/bootstrap.js"></script>
         <script type="text/javascript" src="./admin/lib/js/functionsJquery.js"></script>
         <script src="admin/lib/js/functionsJqueryVal.js" type="text/javascript"></script>
+        <script src="admin/lib/js/functionJqueryAjoutP.js" type="text/javascript"></script>
 
     </head>
     <body>
@@ -55,23 +57,19 @@ session_start();
                                 <span class="glyphicon glyphicon-shopping-cart black"></span><br>
                                 <span class="textPanier black">Votre panier</span>
                             </a>
-                            <div id="resumer" class=" cache">
-                                Bien ajouté !
-                            </div>    
+                            <div id="resumer"></div>    
                         </div> 
 
                         <div class="user col-sm-6">
                             <a href="index.php?page=login.php">
                                 <span class="glyphicon glyphicon-user black centre"></span><br>
-
                                 <span class="textPanier black">
                                     <?php if (isset($_SESSION['user'])) { ?>
-                                        <a href="index.php?page=disconnect.php"><?php print 'Se déconnecter ' . $_SESSION['user']['pseudo']; ?></a>
+                                    <a class="texteARap" href="index.php?page=disconnect.php"><?php print 'Se déconnecter ' . $_SESSION['user']['pseudo']; ?></a>
                                         <?php
                                     } else {
                                         print "Connexion";
-                                    }
-                                    ?>
+                                    }?>
                                 </span>
                             </a> 
                         </div> 
@@ -82,8 +80,7 @@ session_start();
                     <?php
                     if (file_exists('./lib/php/menu.php')) {
                         include ('./lib/php/menu.php');
-                    }
-                    ?>
+                    } ?>
                 </div>
             </div>
         </header>
@@ -129,3 +126,6 @@ session_start();
         </footer>
     </body>
 </html>
+<?php
+ob_end_flush();
+?>

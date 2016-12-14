@@ -3,6 +3,7 @@
 include('./lib/php/adm_liste_include.php');
 $cnx = Connexion::getInstance($dsn, $user, $pass);
 session_start();
+ob_start();
 ?>
 <html>
     <head>
@@ -30,7 +31,7 @@ session_start();
                     </div>                   
 
                     
-                        <div class="col-sm-4 ">
+                        <div class="panier texteARap col-sm-4">
                             <a href="index.php?page=login.php">
                                 <span class="glyphicon glyphicon-user black"></span><br>
                                 
@@ -38,7 +39,7 @@ session_start();
                                     <?php 
                                     if(isset($_SESSION['admin'])){ ?>
                                         <a href="index.php?page=disconnect.php"><?php print 'Se deconnecter '.$_SESSION['admin']['pseudo'];?></a>
-           <?php                    }
+                              <?php }
                                     else {
                                         print "Connexion";
                                     }
@@ -59,7 +60,7 @@ session_start();
             </div>
         </header>
 
-        <div class="container-fluid">
+        <div class="main container-fluid">
             <?php
                         
             if (isset($_GET['page'])) {
@@ -90,16 +91,17 @@ session_start();
             ?> 
         </div>
 
-        <footer class = "container-fluid backgroundBlack">
+        <footer class="footer backgroundBlack">
 
-            <div class = "row">
-                <?php
-                if (file_exists('./lib/php/footer.php')) {
-                    include ('./lib/php/footer.php');
-                }
-                ?>
-            </div>
+            <?php
+            if (file_exists('./lib/php/footer.php')) {
+                include ('./lib/php/footer.php');
+            }
+            ?>
 
         </footer>
     </body>
 </html>
+<?php
+ob_end_flush();
+?>

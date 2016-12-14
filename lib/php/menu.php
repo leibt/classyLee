@@ -46,9 +46,7 @@
                         <li><a href="index.php?page=affichage.php&amp;cat=cf">Femmes</a></li>
                     </ul>
                 </li>
-
             </ul>
-
         </div>
     </div>
 </nav>

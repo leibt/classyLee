@@ -1,4 +1,4 @@
-<?php
+<?php require './pages/traitement_panier.php';
 if (isset($_GET['ref'])) {
     $obj = new ProduitsDB($cnx);
     $donnees = $obj->getProductById($_GET['ref']);
@@ -6,7 +6,7 @@ if (isset($_GET['ref'])) {
 
     <div class="container contenu ">
         <div class="row">
-            <form method="POST" action="index.php?page=traitement_panier.php"> 
+            <form method="POST" id="formAjoutP" action=""> 
                 <div class="col-sm-offset-2 col-sm-5 col-xs-12">
                     <img class="img-responsive center-block" name="image" src="<?php echo $donnees[0]->image; ?>"  alt="<?php echo $donnees[0]->libelle; ?>" />
                 </div>
@@ -40,7 +40,7 @@ if (isset($_GET['ref'])) {
                             <p for="taille">Taille
                                 <select name="taille" id="taille">
                                     <?php for ($j = 0; $j < count($dataTaille); $j++) { ?>
-                                        <option value="<?php echo $dataTaille[$j]->detail_taille; ?>"><?php echo $dataTaille[$j]->detail_taille; ?></option>
+                                        <option value="<?php echo $dataTaille[$j]->detail_taille; ?>" ><?php echo $dataTaille[$j]->detail_taille; ?></option>
                                     <?php } ?>      
                                 </select>
                             </p>
@@ -49,7 +49,7 @@ if (isset($_GET['ref'])) {
 
                         <div class="col-sm-12">
                             <p for="qte">Quantité
-                                <select name="qte" class="qte">
+                                <select name="qte" id="qte" class="qte">
                                     <option value=1>1</option>
                                     <option value=2>2</option>
                                     <option value=3>3</option>
@@ -58,6 +58,7 @@ if (isset($_GET['ref'])) {
                                 </select>
                             </p>
                         </div>
+                        
 
                     </div>
 
@@ -68,12 +69,43 @@ if (isset($_GET['ref'])) {
                     </div>
                 </div>
 
-                <input type="hidden" name="ref" value="<?php echo $donnees[0]->id_produit; ?>"/>
+
+                <input type="hidden" id="ref" name="ref" value="<?php echo $donnees[0]->id_produit; ?>"/>
                 <input type="hidden" name="libelle" value="<?php echo $donnees[0]->libelle; ?>"/>
                 <input type="hidden" name="image" value="<?php echo $donnees[0]->image; ?>"/>
                 <input type="hidden" name="prix" value="<?php echo $donnees[0]->prix; ?>"/>
 
             </form>
+
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Vous venez d'ajouter au panier le produit suivant</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div id="modal-image" class="col-xs-2"></div>
+                        
+                        <div id="modal-details" class="col-sm-10 col-xs-10">
+                            <div class="col-sm-12" id="modal-libelle"></div>
+                            <div class="col-sm-12" id="modal-ref"></div>
+                            <div class="col-sm-12" id="modal-prix"></div>
+                            <div class="col-sm-12" id="modal-taille"></div>
+                            <div class="col-sm-12" id="modal-qte"></div>
+                        </div>
+                        
+                    </div>   
+                    <!--<p id="testmtn"></p>-->
+                </div>
+            </div>
 
         </div>
     </div>

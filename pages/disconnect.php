@@ -1,3 +1,3 @@
 <?php
 session_destroy();
-header('Location: http://localhost/projet/classyLee/index.php?page=accueil.php');
+header('Location: index.php?page=accueil.php');

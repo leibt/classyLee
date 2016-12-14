@@ -11,7 +11,7 @@
  *
  * @author Leïla
  */
-class ProduitsDB extends Produits {
+class ProduitsDB extends Produits  {
 
     private $_db;
     private $_ProductsArray = array();
@@ -57,6 +57,7 @@ class ProduitsDB extends Produits {
 
         return $_TaillesArray;
     }
+    
 
     public function getProductById($ref) {
         try {
@@ -236,5 +237,6 @@ class ProduitsDB extends Produits {
         }
         return $retour;
     }
+
 
 }

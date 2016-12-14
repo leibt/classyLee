@@ -6,7 +6,7 @@ $(document).ready(function () {
      $(this).fadeIn(5);
      });
      });*/
-    var test;
+    //var test;
     $("#nbArt").removeClass('inv').addClass('vis');
 
 
@@ -14,16 +14,16 @@ $(document).ready(function () {
         $(this).addClass('clignoter');
     });
 
-    $('#achete').click(function () {
-
-            $("#resumer").addClass('voir').show(300000);
-        
-
-//        $('#resumer').removeClass('cache').addClass('voir');
-//        $("#resumer").slideDown("slow");
-        /*$('#resumer').removeClass('cache').addClass('voir');
-         $('#resumer').show(50000);*/
-    });
+//    $('#achete').click(function () {
+//
+//            $("#resumer").addClass('voir').show(300000);
+//        
+//
+////        $('#resumer').removeClass('cache').addClass('voir');
+////        $("#resumer").slideDown("slow");
+//        /*$('#resumer').removeClass('cache').addClass('voir');
+//         $('#resumer').show(50000);*/
+//    });
     /*
      if($('#nbArt').text() == ''){
      alert('OLM');

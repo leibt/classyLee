@@ -13,7 +13,7 @@
  */
 class Produits {
 
-    private $_attributs = array();
+        private $_attributs = array();
 
     public function __construct(array $data) {
         $this->hydrate($data);
@@ -41,9 +41,5 @@ class Produits {
         $this->_attributs[$nom] = $valeur;
     }
 
-//autres méthodes de la classe
-    public function faireQqch() {
-        print "<br />Méthode faireQqch";
-    }
 
 }
