@@ -1,3 +1,5 @@
+<?php require './lib/php/traitement_user.php'; ?>
+
 <div class="container contenu" >
     <div class="row">
         <div class="col-sm-6 col-md-4 col-md-offset-4">
@@ -6,7 +8,7 @@
                     <p class="centrerTexte gras espaceTexte">CONNECTEZ-VOUS</p>
                 </div>
                 <div class="panel-body">
-                    <form role="form" id="auth" action="index.php?page=traitement_user.php" method="POST">
+                    <form role="form" id="auth" action="" method="POST">
                         <fieldset>
                             <div class="row">
                                 <div class="col-sm-12 col-md-10  col-md-offset-1 ">
@@ -15,7 +17,7 @@
                                             <span class="input-group-addon">
                                                 <i class="glyphicon glyphicon-user"></i>
                                             </span> 
-                                            <input class="form-control" placeholder="Votre pseudo" name="pseudo" id="pseudo" type="text" autofocus>
+                                            <input class="form-control" placeholder="Votre pseudo" name="pseudo" id="pseudoA" type="text" required="true" maxlength="20" minlength="4" autofocus>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -23,7 +25,7 @@
                                             <span class="input-group-addon">
                                                 <i class="glyphicon glyphicon-lock"></i>
                                             </span>
-                                            <input class="form-control" placeholder="Mot de passe" name="mdp" id="mdp" type="password" >
+                                            <input class="form-control" placeholder="Mot de passe" name="mdp" id="mdpA" type="password" minlength="5" required="true" />
                                         </div>
                                     </div>
                                     <div class="form-group">

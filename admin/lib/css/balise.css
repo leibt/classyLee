@@ -8,6 +8,15 @@ and open the template in the editor.
     Author     : Leïla
 */
 
+
+footer ul{       
+    list-style: none;
+}
+
+
+/*footer a{
+  color:lightgrey;
+}*/
 /*a{
     color: black;    
 }
@@ -20,10 +29,3 @@ footer{
     background-color: black;
 }
 */
-footer ul{       
-  list-style: none;
-}
-
-/*footer a{
-  color:lightgrey;
-}*/

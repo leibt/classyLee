@@ -2,12 +2,12 @@
 header('Content-Type: application/json');
 require '../dbConnect.php';
 require '../classes/Connexion.class.php';
-require '../classes/ProduitDB2.class.php';
+require '../classes/JsonProduitDB.class.php';
 
 $cnx = Connexion::getInstance($dsn,$user,$pass);
 
 try{       
-    $search = new ProduitDB2($cnx);
+    $search = new JsonProduitDB($cnx);
     
     $qteDB= $search->verifQte($_GET['ref'], $_GET['taille']);
        

@@ -2,36 +2,54 @@ $(document).ready(function () {
    //alert('Heeeello');
    //pour pouvoir utiliser regex
    
-  /* $("#form_commande").submit(function(){
-      alert("okk"); 
-   });*/
-   
     $.validator.addMethod("regex", function (value, element, regexpr) {
         return regexpr.test(value);
     }, "Format non valide.");
+
+    $("#auth").validate({
+        rules:{
+            pseudoA:{
+                required:true,
+                minlength:5,
+                maxlength:20
+            },
+            mdpA:{
+                required:true,
+                minlength:5
+            },
+            submitHandler:function(form){
+                form.submit();
+            }
+        }
+    });
+    
+    
 
     $("#formInsc").validate({
         rules: {
             nom:{
                 required:true,
-                max:30
+                maxlength:30
             },
             prenom:{
                 required:true,
-                max:20
+                maxlength:20
             },
             adr:{
                 required:true,
-                max:50
+                maxlength:50
             },
             numAdr:{
                 required:true,
-                max:3 
+                maxlength:3,
+                digits:true
             },
             cp:{
                 required:true,
                 min:1000,
-                max:9999
+                max:9999,
+                maxlength:4,
+                digits:true
             },
             tel: {
                 required:true,
@@ -39,12 +57,12 @@ $(document).ready(function () {
             },
             pseudo:{
                 required:true,
-                min:5,
-                max:20
+                minlength:5,
+                maxlength:20
             },
             mdp:{
                 required:true,
-                min:5
+                minlength:5
             },
             submitHandler:function(form){
                 form.submit();

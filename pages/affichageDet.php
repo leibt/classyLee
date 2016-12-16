@@ -1,4 +1,4 @@
-<?php require './pages/traitement_panier.php';
+<?php require './lib/php/traitement_panier.php';
 if (isset($_GET['ref'])) {
     $obj = new ProduitsDB($cnx);
     $donnees = $obj->getProductById($_GET['ref']);

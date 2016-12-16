@@ -11,7 +11,7 @@
  *
  * @author Leïla
  */
-class CommandeDB {
+class CommandeDB extends Commande {
 
     private $_db;
     private $_CommandeArray = array();
@@ -62,6 +62,8 @@ class CommandeDB {
         return $ret[0];
         
     }
+    
+    
 
     
 }

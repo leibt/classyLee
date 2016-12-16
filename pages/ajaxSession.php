@@ -1,16 +1,15 @@
 <?php
 
 //header('Content-Type: application/json');
-
 //try {
-    if (!isset($_SESSION['panier'])) {
-        creationPanier();
-    } else {
-        $test = ajout();
-    }
-/*} catch (PDOException $e) {
-    
-}*/
+if (!isset($_SESSION['panier'])) {
+    creationPanier();
+} else {
+    $test = ajout();
+}
+/* } catch (PDOException $e) {
+
+  } */
 
 function creationPanier() { /* Cette fonction crée le panier */
     $_SESSION["panier"] = array();
@@ -59,10 +58,6 @@ function ajout() { /* Cette fonction permet d'ajouter la quantité d'article dé
         }
     }
 }
-
-
-
-
 
 /*if (!isset($_SESSION['panier'])) {
     $rep = 'ok';

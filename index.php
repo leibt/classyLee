@@ -21,12 +21,14 @@ ob_start();
 
         <script type="text/javascript" src="./admin/lib/js/jquery-3.1.1.js"></script>
         <script type="text/javascript" src="./admin/lib/js/jquery-validation-1.15.0/"></script>
-        <script type="text/javascript" src="./admin/lib/js/messageJqueryVal.js"></script>
         <script type="text/javascript" src="./admin/lib/css/bootstrap-3.3.7-dist/bootstrap/js/bootstrap.js"></script>
         <script type="text/javascript" src="./admin/lib/js/functionsJquery.js"></script>
+        <script type="text/javascript" src="./admin/lib/js/messageJqueryVal.js"></script>
         <script src="admin/lib/js/functionsJqueryVal.js" type="text/javascript"></script>
         <script src="admin/lib/js/functionJqueryAjoutP.js" type="text/javascript"></script>
-
+        <script src="admin/lib/js/functionJqueryLogin.js" type="text/javascript"></script>
+        <script src="admin/lib/js/functionsJqueryAuth.js" type="text/javascript"></script>
+        
     </head>
     <body>
         <header>

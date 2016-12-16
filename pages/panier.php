@@ -29,7 +29,8 @@
                                 <td><a href="index.php?page=traitement_panier.php&amp;sup=<?php echo $_SESSION["panier"]["ref"][$i]; ?>&amp;taille=<?php echo $_SESSION["panier"]["taille"][$i]; ?>" class="black"><span class="glyphicon glyphicon-remove black"></span></a></td>
                             </tr>
                         </tbody>
-                    <?php }
+                        <?php
+                    }
                 }
                 ?>
             </table>
@@ -49,10 +50,20 @@
 
                 <div class="col-sm-offset-8 col-sm-4">
                     <?php if ($_SESSION['tot'] > 0) { ?>
-                        <input class="btnTotal" type="submit" name="payer" value="PAYER"/>
+                        <input class="btnTotal" type="submit" name="payer" id="payer" value="PAYER"/>
                     <?php }
+                    
+                    if(isset($_SESSION['user'])){
+                        $user = $_SESSION['user']['pseudo'];
+                        ?>
+                        <input type="hidden" id="utilisateur" value="<?php echo $_SESSION['user']['pseudo']; ?>"/>
+                        <?php
+                    }
+                    
                     ?>
                     <input type="hidden" name="total" value="<?php echo $_SESSION['tot']; ?>"/>
+
+                    
                     
                 </div>
             </div>

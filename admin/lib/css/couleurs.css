@@ -7,6 +7,7 @@ and open the template in the editor.
     Created on : 22-nov.-2016, 11:57:11
     Author     : Leïla
 */
+
 .backgroundRed{
     background-color: red;
 }
@@ -24,6 +25,9 @@ and open the template in the editor.
 }
 .secondGrey{
    color: #757D75;
+}
+.rouge{
+    color:red;
 }
 
 .police{
