@@ -18,15 +18,11 @@ if (isset($_POST['insc'])) {
             $mdp = htmlentities(md5($_POST['mdp']));
 
             $adresse = $numAdr . ',' . $adr;
-            //print 'le pseudo est ' . $pseudo;
             $v = $obj->verifPseudo($pseudo);
-
-            //print ($v);
 
             if ($v == 0) {
                 if (!isset($_SESSION['user'])) {
                     $retour = $obj->createUser($nom, $prenom, $adresse, $cp, $tel, $pseudo, $mdp);
-                    //echo 'Retour : ' . $retour;
 
                     if ($retour == 1) {
                         $_SESSION["user"] = array();
@@ -34,17 +30,15 @@ if (isset($_POST['insc'])) {
                         $_SESSION["user"]["mdp"] = $mdp;
 
                         header('Location: index.php?page=panier.php');
-
-                        /* array_push($_SESSION["user"]["pseudo"], $pseudo);
-                          array_push($_SESSION["user"]["mdp"], $mdp); */
                     }else{
                         print '<h4 class="centrerTexte rouge">Une erreur semble être survenue !</h4>';
                     }
                     
+                }else{
+                    print '<h4 class="centrerTexte rouge">Ce pseudo existe déjà !</h4>';
                 }
             } else {
                 print '<h4 class="centrerTexte rouge">Ce pseudo est déjà pris</h4>';
-                //print_r('Pseudo deja pris');
             }
         }else{
             print '<h4 class="centrerTexte rouge">Le code postal doit comporter 4 chiffres et le numéro d\'adresse doit comporter 4 chiffres au maximum</h4>';
@@ -60,8 +54,7 @@ if (isset($_POST['envoieLog'])) {
             $mdp = htmlentities(md5($_POST['mdp']));
 
             $verif = $obj->verifConnexion($pseudo, $mdp);
-            //print_r('test verif : : '.$verif[0]);
-            switch ($verif[0]) {
+                    switch ($verif[0]) {
                 case 0:
                     echo "Pseudo ou mot de passe incorrect";
                     break;

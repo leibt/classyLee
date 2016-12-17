@@ -14,13 +14,17 @@ ob_start();
         <link rel="stylesheet" type="text/css" href="./lib/css/couleurs.css">
         <link rel="stylesheet" type="text/css" href="./lib/css/balise.css">
         <link rel="stylesheet" type="text/css" href="./lib/css/class.css">
-
+        <link rel="stylesheet" type="text/css" href="./lib/css/adminCSS.css">
         
         <script type="text/javascript" src="./lib/js/jquery-3.1.1.js"></script>
         <script type="text/javascript" src="./lib/css/bootstrap-3.3.7-dist/bootstrap/js/bootstrap.js"></script>
+        <script type="text/javascript" src="./lib/js/functionsJqueryAdmin.js"></script>
 
     </head>
     <body>
+        <?php
+        if(isset($_SESSION['admin'])){       
+        ?>
         <header>
             <div class="container-fluid">
                 <div class="row">
@@ -100,6 +104,14 @@ ob_start();
             ?>
 
         </footer>
+        
+        <?php
+        }else{
+            print '<h1 class="centrerTexte rouge espaceTexte">ACCES INTERDIT</h1>';
+            print '<p class="centrerTexte"><a href="../index.php?page=accueil.php">Revenir à l\'accueil</a></p>';
+        }
+        ?>
+        
     </body>
 </html>
 <?php

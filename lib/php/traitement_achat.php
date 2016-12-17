@@ -3,7 +3,7 @@ $obj = new CommandeDB($cnx);
 $objProd = new ProduitsDB($cnx);
 
 if(isset($_POST['payer']) && isset($_POST['total'])){
-    echo 'ok';
+   // echo 'ok';
    if(isset($_SESSION['user'])){
              
        $result = count($_SESSION["panier"]['ref']);
@@ -39,21 +39,12 @@ if(isset($_POST['payer']) && isset($_POST['total'])){
                    if($retour == 1){
                        header('Location: index.php?page=recapitulatifCommande.php');
                    }
-                   //print '<br>Retour insert detail commande : '.$retour;
                }
-           }
-           
-       }
-       
-       //echo "le nom est : ".$pseudo." ".$mdp;
-       
-       
-       
+           }   
+       }      
    } 
    else{
-       header('Location: index.php?page=logCommande.php');
-       
-       //header('Location: index.php?page=login.php');
+       header('Location: index.php?page=logCommande.php');      //header('Location: index.php?page=login.php');
    }
 }
 

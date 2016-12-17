@@ -2,8 +2,9 @@
 
 $obj = new ProduitsDB($cnx);
 
-if (isset($_GET['sup']) && isset($_GET['taille'])) {
-    $ref = $_GET['sup'];
+/*if (isset($_GET['sup']) && isset($_GET['taille'])) {
+    print 'TEST ';
+    /*$ref = $_GET['sup'];
     $taille = $_GET['taille'];
 
     $qteAnc = $_SESSION["panier"]["qteTotal"];
@@ -13,10 +14,10 @@ if (isset($_GET['sup']) && isset($_GET['taille'])) {
     print '<br>la quantite a sup est : ' . $d;
 
     $_SESSION['panier']['qteTotal'] = $qteAnc - $d;
-    print '<br> sess = ' . $_SESSION['panier']['qteTotal'];
+    print '<br> sess = ' . $_SESSION['panier']['qteTotal'];*/
     
-    header("location:".$_SERVER['HTTP_REFERER']);  /* HTTP_REFERER permet de revenir à la page précédente automatiquement */
-}
+    //header("location:".$_SERVER['HTTP_REFERER']);  /* HTTP_REFERER permet de revenir à la page précédente automatiquement */
+//}
 
 if (isset($_POST['achete']) && !isset($_GET['sup']) && !isset($_GET['taille'])) {   
     $ref = $_POST['ref'];

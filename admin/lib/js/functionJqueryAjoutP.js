@@ -34,7 +34,7 @@ $(document).ready(function () {
 
                         },
                         error: function () {
-                            console.log("erreur");
+                            console.log("erreur ajout aticle dans panier");
                         }
                     });
                 },

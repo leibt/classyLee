@@ -86,7 +86,7 @@ if (isset($_POST['connectCom'])) {
 
 
                         <div class="form-group">
-                            <input id="connectCom" type="submit" name="connectCom" class="btn  btn-block" value="Conneion"/>
+                            <input id="connectCom" type="submit" name="connectCom" class="btn  btn-block" value="Connexion"/>
                         </div>
 
                         <p class="texteARap centrerTexte">Vous n'êtes pas encore inscrit ? <a href="index.php?page=inscription.php">Cliquez-ici</a></p>
@@ -94,69 +94,5 @@ if (isset($_POST['connectCom'])) {
                 </div>
             </div>
         </div>
-
-        <!--
-                <div class="col-sm-4 ">
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <form method="POST" action="#" role="form" id="formInsc">
-                                <div class="form-group">
-                                    <h3 class="centrerTexte">Pas encore de compte ?</h3>
-                                </div>
-                                <div class="form-group">
-                                    <p class="texteARap control-label " for="nom">Nom
-                                        <input id="nom" name="nom" type="text" required="true" maxlength="30" class="texteARap form-control">
-                                    </p>
-                                </div>
-                                <div class="form-group">
-                                    <p class="texteARap control-label" for="prenom">Prénom
-                                        <input id="prenom" name="prenom" type="text" required="true" maxlength="20" class="texteARap form-control">
-                                    </p>
-                                </div>
-        
-                                <div class="form-group">
-                                    <p class="control-label texteARap" for="adr">Adresse
-                                        <input id="adr" name="adr" type="text" maxlength="50" required="true" class="texteARap form-control">
-                                    </p>
-                                </div>
-        
-                                <div class="row">
-                                    <div class="col-sm-6 form-group">
-                                        <p class="texteARap">Numéro</p>
-                                        <input id="numAdr" name="numAdr" type="number" required="true" maxlength="3" class="texteARap form-control">
-                                    </div>	
-                                    <div class="col-sm-6 form-group">
-                                        <p class="texteARap">Code postal</p>
-                                        <input type="number" id="cp" name="cp" maxlength="4" required="true" class="texteARap form-control">
-                                    </div>	
-                                </div>
-        
-                                <div class="form-group">
-                                    <p class="texteARap control-label" for="tel">Téléphone
-                                        <input id="tel" name="tel" type="text" maxlength="9" minlength="8" pattern="(0)[0-9]{1,2}\/[0-9]{2}\.[0-9]{2}\.[0-9]{2}" placeholder="ex : 01/23.45.78" class="texteARap form-control">
-                                    </p>
-                                </div>
-        
-                                <div class="form-group">
-                                    <p class="texteARap control-label" for="pseudo">Pseudo
-                                        <input id="pseudo" name="pseudo" type="text" maxlength="20" minlength="4"  class="texteARap form-control">
-                                    </p>
-                                </div>
-        
-                                <div class="form-group">
-                                    <p class="texteARap control-label" for="mdp">Mot de passe 
-                                        <input id="mdp" name="mdp" type="text" minlength="5" class="texteARap form-control">
-                                    </p>
-                                </div>
-        
-        
-                                <div class="form-group">
-                                    <button id="insc" type="submit" class="btn  btn-block">S'incrire</button>
-                                </div>
-                                <p class="centrerTexte form-group">En créant votre compte vous acceptez notre politique !</p>
-                            </form>
-                        </div>
-                    </div>
-                </div>-->
     </div>
 </div>

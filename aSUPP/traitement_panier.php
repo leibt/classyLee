@@ -2,7 +2,7 @@
 
 $obj = new ProduitsDB($cnx);
 
-if (isset($_GET['sup']) && isset($_GET['taille'])) {
+/*if (isset($_GET['sup']) && isset($_GET['taille'])) {
     $ref = $_GET['sup'];
     $taille = $_GET['taille'];
 
@@ -16,7 +16,7 @@ if (isset($_GET['sup']) && isset($_GET['taille'])) {
     print '<br> sess = ' . $_SESSION['panier']['qteTotal'];
     
     header("location:".$_SERVER['HTTP_REFERER']);  /* HTTP_REFERER permet de revenir à la page précédente automatiquement */
-}
+//}*/
 
 if (isset($_POST['achete']) && !isset($_GET['sup']) && !isset($_GET['taille'])) {   
     $ref = $_POST['ref'];

@@ -158,6 +158,25 @@ class ProduitsDB extends Produits  {
         return $_uneClasseArray;
     }
 
+    
+    public function getListeProductsByCat($cat) {
+        try {
+            $query = "SELECT * FROM vue_prod where categorie=:cat order by libelle";
+            $sql = $this->_db->prepare($query);
+
+            $sql->bindValue(':cat', $cat);
+            $sql->execute();
+        } catch (PDOException $e) {
+            print $e->getMessage();
+        }
+
+        while ($data = $sql->fetch()) {
+            $_uneClasseArray[] = new Produits($data);
+        }
+
+        return $_uneClasseArray;
+    }
+    
     function suppression_art($ref, $taille) { //suppression article du panier
         $temp = array();
         $temp['image'] = array();

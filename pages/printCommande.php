@@ -22,18 +22,6 @@ $pdf->SetFillColor(255,255,255);
 //$pdf->SetTextColor(255,255,255);
 $pdf->SetXY(2.5,3);
 $pdf->Cell(16,4,'C l a s s y  L e e',1,1,'C',1);
-
-
-/*$pdf->SetDrawColor(0,0,0);
-$pdf->SetFillColor(255,255,255);
-$pdf->SetTextColor(0,0,0);
-$pdf->SetXY(0,3);
-$pdf->Cell(0,0,'C l a s s y  L e e',1,0,'C');*/
-
-
-
-//$pdf->SetDrawColor(0,0,0);
-//$pdf->SetFillColor(255,255,255);
 $pdf->SetTextColor(0,0,0);
 $pdf->SetFont('Times','',10);
 
@@ -103,42 +91,24 @@ for($i=0;$i<$nbr;$i++){
     $pdf->Cell(16,1,$details[$i]['id_produit'],0,1,'L',1);
     
     $pdf->SetXY($x+2,$y);
-    $pdf->Cell(16,1,$details[$i]['libelle'],0,1,'L',1);
+    $pdf->Cell(16,1,  utf8_decode($details[$i]['libelle']),0,1,'L',1);
     
     $pdf->SetXY($x+7.5,$y);
     $pdf->Cell(16,1,$details[$i]['taille'],0,1,'L',1);
     
     $pdf->SetXY($x+10.2,$y);
-    $pdf->Cell(16,1,$details[$i]['prix'],0,1,'L',1);
+    $pdf->Cell(16,1,$details[$i]['prix']." ".chr(128),0,1,'L',1);
     
     $pdf->SetXY($x+14,$y);
     $pdf->Cell(16,1,$details[$i]['quantite_com'],0,1,'L',1);
     
-    /*$pdf->SetX(12,$y);
-    $pdf->Cell(16,1,$liste[$i]['prix_unitaire'],0,1,'L',1);*/
     $y+=0.8;
 }
 
 
 $pdf->SetFont('Times','',13);
 $pdf->SetXY(0,$y+2);
-$pdf->Cell(16,1,"TOTAL : ".$com[0]['total'],0,1,'R',1);
-/*$pdf->SetDrawColor(0,0,0);
-$pdf->SetFillColor(255,255,255);
-$pdf->SetTextColor(0,0,0);
-$pdf->SetFont('Arial','',12);
-$pdf->SetXY(2.5,4);
-$x=2.5;
-$y=4;
-for($i=0;$i<$nbr;$i++){
-    $pdf->SetXY($x+0.5,$y);
-    $pdf->Cell(16,1,  utf8_decode($liste[$i]['nom_gateau']),0,1,'L',1);
-    $pdf->SetX(12,$y);
-    $pdf->Cell(16,1,$liste[$i]['prix_unitaire'],0,1,'L',1);
-    $y+=0.8;
-}
-*/
-
+$pdf->Cell(16,1,"TOTAL : ".$com[0]['total']." ".chr(128),0,1,'R',1);
 $pdf->Output();
 
  

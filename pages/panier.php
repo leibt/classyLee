@@ -1,13 +1,14 @@
+<?php require './lib/php/traitement_achat.php' ?>
 <div class="container contenu">
     <div id='rect'>
         <div class="table-responsive">
             <table class="table">
                 <thead>
                     <tr>
-                        <th>Image</th>
-                        <th>Détails</th>
-                        <th>Prix</th>
-                        <th>Suppression</th>
+                        <th class="hidden-xs texteARap">Image</th>
+                        <th class="texteARap">Détails</th>
+                        <th class="texteARap">Prix</th>
+                        <th class="texteARap">Suppression</th>
                     </tr>
                 </thead>
                 <?php
@@ -18,7 +19,7 @@
                     <?php for ($i = 0; $i < $result; $i++) { ?>
                         <tbody>
                             <tr>
-                                <td><?php echo '<img class="img-responsive " width="30%" src="' . $_SESSION["panier"]["image"][$i] . '" />'; ?></td>
+                                <td class="hidden-xs"><?php echo '<img class="img-responsive " width="30%" src="' . $_SESSION["panier"]["image"][$i] . '" />'; ?></td>
                                 <td>
                                     <div class="col-sm-12 texteARap"><?php echo $_SESSION["panier"]["libelle"][$i]; ?> </div>
                                     <div class="col-sm-12 secondGrey texteARap">REF : <?php echo $_SESSION["panier"]["ref"][$i]; ?> </div>
@@ -26,7 +27,7 @@
                                     <div class="col-sm-12 texteARap">QUANTITE : <?php echo $_SESSION["panier"]["qte"][$i]; ?></div>
                                 </td>
                                 <td class="texteARap"><?php echo $_SESSION["panier"]["prix"][$i]; ?> €</td>
-                                <td><a href="index.php?page=traitement_panier.php&amp;sup=<?php echo $_SESSION["panier"]["ref"][$i]; ?>&amp;taille=<?php echo $_SESSION["panier"]["taille"][$i]; ?>" class="black"><span class="glyphicon glyphicon-remove black"></span></a></td>
+                                <td><a href="index.php?page=suppressionArticle.php&amp;sup=<?php echo $_SESSION["panier"]["ref"][$i]; ?>&amp;taille=<?php echo $_SESSION["panier"]["taille"][$i]; ?>" class="black"><span class="glyphicon glyphicon-remove black"></span></a></td>
                             </tr>
                         </tbody>
                         <?php
@@ -37,34 +38,33 @@
         </div>
     </div>
     <div class="row">
-        <form action="index.php?page=traitement_achat.php" method="POST">           
-            <div class="col-sm-offset-9 col-sm-2 ">
-                <div class="col-sm-9 gras ">TOTAL : </div>
-
-                <div class="col-sm-3">
-                    <?php
-                    $_SESSION['tot'] = total();
-                    echo '<label>' . $_SESSION['tot'] . '€</label> </p>';
-                    ?> 
+        <form action="" method="POST">           
+            <div class="col-sm-offset-7 col-sm-4">
+                <div class="col-sm-offset-6 col-sm-6 ">
+                    <h4>
+                        <span class="gras">TOTAL :</span> 
+                        <?php
+                        $_SESSION['tot'] = total();
+                        echo '&nbsp; &nbsp;' . $_SESSION['tot'] . '€';
+                        ?> 
+                    </h4>
                 </div>
+
 
                 <div class="col-sm-offset-8 col-sm-4">
                     <?php if ($_SESSION['tot'] > 0) { ?>
                         <input class="btnTotal" type="submit" name="payer" id="payer" value="PAYER"/>
-                    <?php }
-                    
-                    if(isset($_SESSION['user'])){
+                        <?php
+                    }
+
+                    if (isset($_SESSION['user'])) {
                         $user = $_SESSION['user']['pseudo'];
                         ?>
                         <input type="hidden" id="utilisateur" value="<?php echo $_SESSION['user']['pseudo']; ?>"/>
                         <?php
                     }
-                    
                     ?>
-                    <input type="hidden" name="total" value="<?php echo $_SESSION['tot']; ?>"/>
-
-                    
-                    
+                    <input type="hidden" name="total" value="<?php echo $_SESSION['tot']; ?>"/>              
                 </div>
             </div>
         </form>

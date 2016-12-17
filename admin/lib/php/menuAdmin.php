@@ -10,7 +10,7 @@
         <div class="collapse navbar-collapse" id="myNavbar">
 
             <ul class="nav navbar-nav">
-                <li><a href="index.php?page=adm.php">ADMINISTRATION</a></li>  
+             <li><a href="index.php?page=affichageCatAdm.php">ADMINISTRATION</a></li>  <!--                <li><a href="index.php?page=adm.php">ADMINISTRATION</a></li>  -->
                 
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">FEMMES</a>
