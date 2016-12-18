@@ -13,19 +13,12 @@ footer ul{
     list-style: none;
 }
 
-
-/*footer a{
-  color:lightgrey;
-}*/
-/*a{
-    color: black;    
+.imgCat:hover{
+    opacity: 0.5;
 }
-
-h4{
-    color: #757D75;
+@media screen and (max-width: 768px) {
+    .inputRed{
+        width: 80%;
+        
+    }
 }
-
-footer{
-    background-color: black;
-}
-*/

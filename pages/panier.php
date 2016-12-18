@@ -39,32 +39,35 @@
     </div>
     <div class="row">
         <form action="" method="POST">           
-            <div class="col-sm-offset-7 col-sm-4">
-                <div class="col-sm-offset-6 col-sm-6 ">
-                    <h4>
-                        <span class="gras">TOTAL :</span> 
-                        <?php
-                        $_SESSION['tot'] = total();
-                        echo '&nbsp; &nbsp;' . $_SESSION['tot'] . '€';
-                        ?> 
-                    </h4>
+            <div class="col-sm-offset-5 col-sm-7 col-md-offset-7 col-md-5">
+                <div class="row">
+                    <div class="col-xs-offset-3 col-xs-8 col-sm-offset-6 col-sm-6 ">
+                        <h4>
+                            <span class="gras">TOTAL :</span> 
+                            <?php
+                            $_SESSION['tot'] = total();
+                            echo '&nbsp; &nbsp;' . $_SESSION['tot'] . '€';
+                            ?> 
+                        </h4>
+                    </div>
                 </div>
 
+                <div class="row">
+                    <div class="col-xs-12 col-sm-offset-4 col-sm-8 col-md-offset-5 col-md-6">
+                        <?php if ($_SESSION['tot'] > 0) { ?>
+                            <input class="btnTotal" type="submit" name="payer" id="payer" value="CONFIRMER VOTRE COMMANDE"/>
+                            <?php
+                        }
 
-                <div class="col-sm-offset-8 col-sm-4">
-                    <?php if ($_SESSION['tot'] > 0) { ?>
-                        <input class="btnTotal" type="submit" name="payer" id="payer" value="PAYER"/>
-                        <?php
-                    }
-
-                    if (isset($_SESSION['user'])) {
-                        $user = $_SESSION['user']['pseudo'];
+                        if (isset($_SESSION['user'])) {
+                            $user = $_SESSION['user']['pseudo'];
+                            ?>
+                            <input type="hidden" id="utilisateur" value="<?php echo $_SESSION['user']['pseudo']; ?>"/>
+                            <?php
+                        }
                         ?>
-                        <input type="hidden" id="utilisateur" value="<?php echo $_SESSION['user']['pseudo']; ?>"/>
-                        <?php
-                    }
-                    ?>
-                    <input type="hidden" name="total" value="<?php echo $_SESSION['tot']; ?>"/>              
+                        <input type="hidden" name="total" value="<?php echo $_SESSION['tot']; ?>"/>              
+                    </div>
                 </div>
             </div>
         </form>

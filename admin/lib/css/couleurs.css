@@ -79,7 +79,7 @@ and open the template in the editor.
 
 .btnTotal{
     background-color: black;
-    padding: 4% 20% 4% 5px;
+    border-color: black;
     color: white;
+    font-size: 1em;
 }
-

@@ -1,8 +1,4 @@
-@media screen and (max-width: 768px) {
-    
-    /*#ajoutSt{
-        height: 20px;
-        width: 15px;
-        font-size: 3.5em;
-    }*/
+.afficheCat:hover{
+    opacity: 0.5;
+    filter: alpha(opacity=50); /* For IE8 and earlier */
 }

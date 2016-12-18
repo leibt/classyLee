@@ -29,12 +29,12 @@
                         <div class="row">
                             <div class="col-sm-6 form-group">
                                 <p>Numéro
-                                    <input id="numAdr" name="numAdr" type="number" required="true" class="form-control">
+                                    <input id="numAdr" name="numAdr" type="number" min="1" max="5000" required="true" class="form-control">
                                 </p>
                             </div>	
                             <div class="col-sm-6 form-group">
                                 <p>Code postal
-                                    <input id="cp" name="cp" type="number" required="true" class="form-control">
+                                    <input id="cp" name="cp" type="number" required="true" min="1000" max="9999" class="form-control">
                                 </p>
                             </div>	
                         </div>

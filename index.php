@@ -10,13 +10,10 @@ ob_start();
         <meta charset="UTF-8">
         <title>Classy Lee</title>
         <link rel="stylesheet" type="text/css" href="./admin/lib/css/bootstrap-3.3.7-dist/bootstrap/css/bootstrap.css">
-        <!--<link rel="stylesheet" type="text/css" href="./admin/lib/css/body.css">
-        <link rel="stylesheet" type="text/css" href="./admin/lib/css/accueil.css">
-        <link rel="stylesheet" type="text/css" href="./admin/lib/css/affichage.css">-->
 
         <link rel="stylesheet" type="text/css" href="./admin/lib/css/couleurs.css">
-        <link rel="stylesheet" type="text/css" href="./admin/lib/css/balise.css">
-        <link rel="stylesheet" type="text/css" href="./admin/lib/css/class.css">
+        <link rel="stylesheet" type="text/css" href="./admin/lib/css/autres.css">
+        <link rel="stylesheet" type="text/css" href="./admin/lib/css/gabarits.css">
 
 
         <script type="text/javascript" src="./admin/lib/js/jquery-3.1.1.js"></script>
@@ -44,7 +41,7 @@ ob_start();
                     <div class="blockGly col-sm-4 col-xs-4 ">                        
                         <div class="panier col-sm-6 ">                                     
 
-                            <span class="inv" id="nbArt">
+                            <span class="vis clignoter" id="nbArt">
                                 <?php
                                 if (isset($_SESSION['panier']['ref'])) {
                                     if (!empty($_SESSION["panier"]["qteTotal"])) {
@@ -96,24 +93,6 @@ ob_start();
             } else {
                 include("./pages/accueil.php"); /* si aucune touche est entrée la page sera celle de l'accueil */
             }
-
-            /*
-              print $_SESSION['page'];
-              if (!isset($_SESSION['page'])) {
-              $_SESSION['page'] = "accueil";
-              }
-              if (isset($_GET['page'])) {
-              $_SESSION['page'] = $_GET['page'];
-
-              }
-              $path = './pages/' . $_SESSION['page'] . '.php';
-              if (file_exists($path)) {
-              include($path);
-              } else {
-              print "Page introuvable";
-
-              }
-             */
             ?> 
         </div>
 

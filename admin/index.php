@@ -12,9 +12,8 @@ ob_start();
         <link rel="stylesheet" type="text/css" href="./lib/css/bootstrap-3.3.7-dist/bootstrap/css/bootstrap.css">
 
         <link rel="stylesheet" type="text/css" href="./lib/css/couleurs.css">
-        <link rel="stylesheet" type="text/css" href="./lib/css/balise.css">
-        <link rel="stylesheet" type="text/css" href="./lib/css/class.css">
-        <link rel="stylesheet" type="text/css" href="./lib/css/adminCSS.css">
+        <link rel="stylesheet" type="text/css" href="./lib/css/autres.css">
+        <link rel="stylesheet" type="text/css" href="./lib/css/gabarits.css">
         
         <script type="text/javascript" src="./lib/js/jquery-3.1.1.js"></script>
         <script type="text/javascript" src="./lib/css/bootstrap-3.3.7-dist/bootstrap/js/bootstrap.js"></script>

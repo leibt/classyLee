@@ -48,7 +48,7 @@
 
                                     <td class="hidden-xs hidden-sm"><?php echo $prod[$i]->prix ?>€</td>
                                     <!--<td>/<?php //echo $donnees[$i]->quantite      ?></td>-->
-                                    <td class="texteARap"><input type="number" id="ajoutSt" name="ajoutSt" /></td>
+                                    <td class="texteARap"><input class="inputRed" type="number" id="ajoutSt" name="ajoutSt" /></td>
 
                                     <td class="texteARap">
                                         <input type="submit" id="ajouter" name="ajouter" value="+" />

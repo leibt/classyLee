@@ -41,7 +41,9 @@ $(document).ready(function () {
             },
             numAdr:{
                 required:true,
-                maxlength:3,
+                min:1,
+                max:5000,
+                maxlength:4,
                 digits:true
             },
             cp:{
