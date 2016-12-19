@@ -5,7 +5,8 @@ $obj = new ClientDB($cnx);
 if (isset($_POST['insc'])) {
     //echo 'ok';
     if (!empty($_POST['nom']) && !empty($_POST['prenom']) && !empty($_POST['adr']) && !empty($_POST['numAdr']) && !empty($_POST['cp']) && !empty($_POST['tel']) && !empty($_POST['pseudo']) && !empty($_POST['mdp'])) {
-
+        $err = array();   
+        
         if (count($_POST['cp']) == 4 && count($_POST['numAdr'] < 5)) {
             
             $nom = htmlentities($_POST['nom']);

@@ -3,20 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/websites/classyLee/pages/logCommande.php</file>
+            <file>file:/C:/websites/classyLee/admin/lib/css/couleurs.css</file>
+            <file>file:/C:/websites/classyLee/admin/pages/affichageCatAdm.php</file>
+            <file>file:/C:/websites/classyLee/pages/ajaxSession.php</file>
             <file>file:/C:/websites/classyLee/admin/lib/js/functionsJquery.js</file>
-            <file>file:/C:/websites/classyLee/aSUPP/traitement_panier.php</file>
-            <file>file:/C:/websites/classyLee/admin/lib/css/class.css</file>
-            <file>file:/C:/websites/classyLee/pages/inscription.php</file>
-            <file>file:/C:/websites/classyLee/pages/login.php</file>
-            <file>file:/C:/websites/classyLee/pages/printCommande.php</file>
+            <file>file:/C:/websites/classyLee/pages/panier.php</file>
+            <file>file:/C:/websites/classyLee/admin/lib/css/autres.css</file>
+            <file>file:/C:/websites/classyLee/admin/lib/js/functionJqueryAjoutP.js</file>
+            <file>file:/C:/websites/classyLee/admin/index.php</file>
+            <file>file:/C:/websites/classyLee/admin/lib/php/ajax/ajaxAjoutProduit.php</file>
+            <file>file:/C:/websites/classyLee/pages/affichageDet.php</file>
             <file>file:/C:/websites/classyLee/index.php</file>
-            <file>file:/C:/websites/classyLee/admin/lib/js/functionsJqueryVal.js</file>
-            <file>file:/C:/websites/classyLee/lib/php/traitement_user.php</file>
-            <file>file:/C:/websites/classyLee/lib/php/traitement_ajout_panier.php</file>
-            <file>file:/C:/websites/classyLee/pages/recapitulatifCommande.php</file>
-            <file>file:/C:/websites/classyLee/pages/suppressionArticle.php</file>
-            <file>file:/C:/websites/classyLee/aSUPP/traitement_user.php</file>
+            <file>file:/C:/websites/classyLee/admin/lib/css/gabarits.css</file>
         </group>
     </open-files>
 </project-private>
